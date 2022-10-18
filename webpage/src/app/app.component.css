@@ -1,0 +1,21 @@
+/*#foot{
+   
+    margin: 0px;
+    position:fixed;
+   bottom:0;
+   width:100%;
+   height: 50px;
+   text-align: center;
+   overflow:hidden;
+   clear: both;
+    
+}
+#whole{
+    padding-bottom: 2px;
+    overflow: auto;
+    margin-bottom: 20px;
+}*/
+.spacer{
+    margin-bottom: 10px; /* how high is your footer */
+    visibility: hidden; 
+  }

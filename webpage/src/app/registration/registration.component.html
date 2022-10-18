@@ -1,0 +1,80 @@
+<div id="rwhole mb-sm-10" class="bg-white">
+    <h4 class="text-center" id="head">Register to explore amazing career opportunities</h4>
+    <div class="container pb-sm-3 m-sm">
+        <form [formGroup]="ContactForm" (ngSubmit)="SubmitInfo()">
+            <div class="form-group mb-2">
+
+                <label for="uname"><b>Username</b></label><br>
+                <input type="text" placeholder="Enter Username" class="form-control" name="uname" formControlName="username">
+                <br>  
+            </div>
+
+            <div *ngIf="!username?.valid && (username?.dirty || username?.touched)" class="error text-danger" role="alert">
+                <div *ngIf="username?.errors?.required"><!--here the name firstname is from get method that is inside the ts file-->
+                  User Name is required
+                </div>
+                <div *ngIf="username?.errors?.minlength">
+                    User Name length should be 3
+                  </div>
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="psw"><b>Password</b></label><br>
+    <input type="password" placeholder="Enter Password" class="form-control" name="psw" formControlName="password">
+    <br>
+            </div>
+
+            <div *ngIf="!password?.valid && (password?.dirty || password?.touched)" class="error text-danger" role="alert">
+                <div *ngIf="password?.errors?.required"><!--here the name firstname is from get method that is inside the ts file-->
+                  Password is required
+                </div>
+                <div *ngIf="password?.errors?.pattern">
+                    Password pattern not macthing
+                  </div>
+            </div>
+
+            <div class="form-group mb-2">
+
+                <label for="email"><b>Email Address</b></label><br>
+                <input type="email" placeholder="Enter Email Address" class="form-control" name="email" formControlName="email"/>
+                <br>  
+            </div>
+
+            <div *ngIf="!email?.valid && (email?.dirty || email?.touched)" class="error text-danger" role="alert">
+                <div *ngIf="email?.errors?.required"><!--here the name firstname is from get method that is inside the ts file-->
+                  Email is required
+                </div>
+                <div *ngIf="email?.errors?.pattern"><!--here the name firstname is from get method that is inside the ts file-->
+                    Enter valid email
+                  </div>
+            </div>
+
+            <div class="form-group mb-2">
+
+                <label for="city"><b>City</b></label><br>
+                <input type="text" placeholder="Enter City" class="form-control" name="city" formControlName="city" />
+                <br>  
+            </div>
+
+            <div class="form-group mb-2">
+
+                <label for="phno"><b>Mobile No.</b></label><br>
+                <input type="tel" placeholder="Enter Mobile Number" class="form-control" name="phno" formControlName="mobile"/>
+                <br>  
+            </div>
+
+            <div *ngIf="!mobile?.valid && (mobile?.dirty || mobile?.touched)" class="error text-danger" role="alert">
+                <div *ngIf="mobile?.errors?.pattern"><!--here the name firstname is from get method that is inside the ts file-->
+                 Invalid Phone number
+                </div></div>
+
+            <button class="btn btn-primary btn-block bg-primary mb-4 form-inline" type="button">Register</button>
+
+
+
+
+        </form>
+
+    </div>
+
+</div>

@@ -1,0 +1,54 @@
+<div class="bg-white" id="lwhole">
+    <h4 class="text-center" id="head">Login to a world of opportunities!</h4>
+    <div class="container pb-sm-3 m-sm">
+        <form [formGroup]="ContactForm" (ngSubmit)="SubmitInfo()">
+            <div class="form-group mb-2">
+
+                <label for="uname"><b>Username</b></label><br>
+                <input type="text" placeholder="Enter Username" class="form-control" name="uname" formControlName="username"/>
+                <br>  
+            </div>
+
+            <div *ngIf="!username?.valid && (username?.dirty || username?.touched)" class="error text-danger" role="alert">
+                <div *ngIf="username?.errors?.required"><!--here the name firstname is from get method that is inside the ts file-->
+                  User Name is required
+                </div>
+                <div *ngIf="username?.errors?.minlength">
+                    User Name length should be 3
+                  </div>
+            </div>
+
+
+            <div class="form-group mb-2">
+                <label for="psw"><b>Password</b></label><br>
+    <input type="password" placeholder="Enter Password" class="form-control" name="psw" formControlName="password"  />
+    <br>
+            </div>
+
+            <div *ngIf="!password?.valid && (password?.dirty || password?.touched)" class="error text-danger" role="alert">
+                <div *ngIf="password?.errors?.required"><!--here the name firstname is from get method that is inside the ts file-->
+                  Password is required
+                </div>
+                <div *ngIf="password?.errors?.pattern">
+                    Password pattern not macthing
+                  </div>
+            </div>
+
+            <button class="btn btn-primary btn-block bg-primary mb-4 form-inline" type="Submit">Login</button>
+            <div class="checkbox">
+                <label><input type="checkbox" name="remember"> Remember me</label>
+            </div>
+            <div class="panel panel-default bg-light">
+                <div class="panel-heading">
+                    <div class="row">
+                <div class="col-md-4 text-left panel-title pl-sm-4 pt-sm-4">
+                    <button class="btn btn-primary btn-block bg-danger mb-4 form-inline" type="button">Cancel</button>
+                </div>
+                <div class="col-md-8 text-right pr-sm-4 pt-sm-4">
+                    <a href="">Forgot Password?</a>
+                </div></div></div>
+
+            </div>
+        </form>
+    </div>
+</div>
